@@ -24,20 +24,19 @@ enum layer_names {
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_LAY0] = LAYOUT(
-                            KC_PSLS, KC_PAST, KC_PMNS, 
-    KC_VOLD, KC_VOLU, KC_P7, KC_P8,   KC_P9,   KC_PPLS, 
-    KC_TRNS, KC_TRNS, KC_P4, KC_P5,   KC_P6,   KC_PPLS, 
-    KC_TRNS, KC_TRNS, KC_P1, KC_P2,   KC_P3,   KC_PENT, 
-    KC_TRNS, KC_TRNS, KC_P0, KC_P0,   KC_PDOT, KC_PENT  
+    [_LAY0] = LAYOUT(KC_NUM, MO(_LAY1), KC_PSLS,
+    KC_VOLD, KC_VOLU, KC_P7, KC_P8,   KC_P9,   KC_PAST, 
+    KC_TRNS, KC_TRNS, KC_P4, KC_P5,   KC_P6,   KC_PMNS, 
+    KC_TRNS, KC_TRNS, KC_P1, KC_P2,   KC_P3,   KC_PPLS, 
+    KC_TRNS, KC_TRNS, MO(_LAY2), KC_P0,  KC_PDOT, KC_PENT  
     ),
 
     [_LAY1] = LAYOUT(
-                    ___, ___, ___, 
-    ___, ___, ___, ___, ___, ___, 
-    ___, ___, ___, ___, ___, ___, 
-    ___, ___, ___, ___, ___, ___, 
-    ___, ___, ___, ___, ___, ___  
+                    BL_TOGG, ___, ___, 
+    ___, ___, ___, ___, ___, BL_STEP, 
+    ___, ___, ___, ___, ___, BL_DEC, 
+    ___, ___, ___, ___, ___, BL_INC, 
+    ___, ___, ___, ___, ___, BL_BRTG  
     ),
 
     [_LAY2] = LAYOUT(
